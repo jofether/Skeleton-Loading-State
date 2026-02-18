@@ -88,7 +88,9 @@ function App() {
   return (
     <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50">
+      {/* [BUG - LAYERS] z-index reduced from 50 to 10, nav appears behind content */}
+      {/* [FIX] z-10 should be z-50 */}
+      <nav className="sticky top-0 z-10 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2 text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             <span className="text-3xl">🚀</span>
@@ -107,7 +109,9 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      {/* [BUG - LAYERS] absolute positioning without proper top/left values misaligns content */}
+      {/* [FIX] remove absolute or add proper positioning (top-0 left-0 right-0) */}
+      <section className="absolute max-w-7xl mx-auto px-6 py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-block bg-blue-500/20 border border-blue-500/50 px-4 py-2 rounded-full text-sm mb-6">
@@ -121,9 +125,11 @@ function App() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition transform hover:scale-105">
-                Start Free Trial → 
+                Start Free Trial →
               </button>
-              <button className="border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition">
+              {/* [BUG - LAYOUT] flex-col-reverse incorrectly reverses button order */}
+              {/* [FIX] flex-col-reverse should be removed, no flex utility needed */}
+              <button className="border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition flex-col-reverse">
                 Learn More
               </button>
             </div>
@@ -151,9 +157,11 @@ function App() {
       </section>
 
       {/* Features Section */}
+      {/* [BUG - LAYOUT] grid-cols-1 forces all features into single column */}
+      {/* [FIX] grid-cols-1 should be removed, keep md:grid-cols-3 for proper 3-column layout */}
       <section id="features" className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-4xl font-bold text-center mb-12">Powerful Features</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {features.map((feature, idx) => (
             <div key={idx} className="bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl hover:border-blue-500/50 transition transform hover:scale-105">
               <div className="text-5xl mb-4">{feature.emoji}</div>
@@ -172,9 +180,11 @@ function App() {
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((project) => (
+            // [BUG - TYPO] "gap-6x" is invalid Tailwind class (x suffix doesn't exist)
+            // [FIX] "gap-6x" should be removed or "gap-6" used correctly
             <div
               key={project.id}
-              className="group bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105"
+              className="group bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x"
               onMouseEnter={() => setHoveredCard(project.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
@@ -188,7 +198,9 @@ function App() {
                 <span className="inline-block bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm mb-3">
                   {project.category}
                 </span>
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                {/* [BUG - TYPO] "tex-xl" missing the 't' in text */}
+                {/* [FIX] "tex-xl" should be "text-xl" */}
+                <h3 className="tex-xl font-bold mb-2">{project.title}</h3>
                 <div className="flex items-center gap-2 mb-4">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
@@ -210,11 +222,15 @@ function App() {
       </section>
 
       {/* Team Section */}
-      <section id="team" className="max-w-7xl mx-auto px-6 py-20">
+      {/* [BUG - SPACING] -m-12 creates massive negative margins causing overlap with previous section */}
+      {/* [FIX] -m-12 should be removed, or changed to positive margin like m-0 or mt-4 */}
+      <section id="team" className="max-w-7xl mx-auto px-6 py-20 -m-12">
         <h2 className="text-4xl font-bold text-center mb-12">Meet Our Team</h2>
         <div className="grid md:grid-cols-4 gap-8">
           {teamMembers.map((member, idx) => (
-            <div key={idx} className="bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition">
+            // [BUG - SPACING] pt-32 adds excessive padding breaking card proportions
+            // [FIX] pt-32 should be removed or reduced to pt-0 or pt-4
+            <div key={idx} className="bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition pt-32">
               <div className="text-6xl mb-4">{member.image}</div>
               <h3 className="text-xl font-bold mb-2">{member.name}</h3>
               <p className="text-slate-400">{member.role}</p>
@@ -225,7 +241,9 @@ function App() {
 
       {/* CTA Section */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-12 text-center">
+        {/* [BUG - COLOR & CONTRAST] bg-white with text-white makes text invisible */}
+        {/* [FIX] bg-white should be bg-gradient-to-r from-blue-500 to-purple-600 or text-white changed to text-slate-900 */}
+        <div className="bg-white rounded-2xl p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
           <p className="text-lg mb-8 text-blue-100">Join thousands of users already experiencing the difference.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -245,7 +263,9 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Nexus</h3>
-              <p className="text-slate-400 text-sm">Building the future of development</p>
+              {/* [BUG - COLOR & CONTRAST] text-slate-700 on dark bg barely readable, too dark */}
+              {/* [FIX] text-slate-700 should be text-slate-300 or text-slate-400 for better contrast */}
+              <p className="text-slate-700 text-sm">Building the future of development</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Product</h4>
