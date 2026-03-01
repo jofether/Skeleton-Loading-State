@@ -225,7 +225,7 @@ function App() {
 
       {/* CTA Section */}
       <section className="max-w-4xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-2xl p-12 text-center text-white">
+        <div className="cta-container bg-white rounded-2xl p-12 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
           <p className="text-lg mb-8 text-blue-100">Join thousands of users already experiencing the difference.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
