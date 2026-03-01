@@ -245,7 +245,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Nexus</h3>
-              <p className="text-slate-700 text-sm">Building the future of development</p>
+              <p className="footer-description text-slate-700 text-sm">Building the future of development</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Product</h4>

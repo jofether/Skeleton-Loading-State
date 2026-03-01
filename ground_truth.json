@@ -139,10 +139,10 @@
       "buggy_code": "<div className=\"cta-container bg-white rounded-2xl p-12 text-center text-white\">",
       "css_selector": ".cta-container",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 216,
+        "y": 215,
+        "width": 848,
+        "height": 259
       }
     },
     {
@@ -151,8 +151,8 @@
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
       "line_number": 248,
-      "clean_code": "<p className=\"text-slate-400 text-sm\">Building the future of development</p>",
-      "buggy_code": "<p className=\"text-slate-700 text-sm\">Building the future of development</p>",
+      "clean_code": "<p className=\"footer-description text-slate-400 text-sm\">Building the future of development</p>",
+      "buggy_code": "<p className=\"footer-description text-slate-700 text-sm\">Building the future of development</p>",
       "css_selector": ".footer-description",
       "bounding_box": {
         "x": 0,
