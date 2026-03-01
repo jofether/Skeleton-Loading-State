@@ -214,7 +214,7 @@ function App() {
         <h2 className="text-4xl font-bold text-center mb-12">Meet Our Team</h2>
         <div className="grid md:grid-cols-4 gap-8">
           {teamMembers.map((member, idx) => (
-            <div key={idx} className="bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition pt-32">
+            <div key={idx} className="team-member bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition pt-32">
               <div className="text-6xl mb-4">{member.image}</div>
               <h3 className="text-xl font-bold mb-2">{member.name}</h3>
               <p className="text-slate-400">{member.role}</p>
