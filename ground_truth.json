@@ -155,10 +155,10 @@
       "buggy_code": "<p className=\"footer-description text-slate-700 text-sm\">Building the future of development</p>",
       "css_selector": ".footer-description",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 24,
+        "y": 692,
+        "width": 284,
+        "height": 20
       }
     }
   ]
