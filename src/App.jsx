@@ -174,7 +174,7 @@ function App() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x"
+              className="group product-card bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x"
               onMouseEnter={() => setHoveredCard(project.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >

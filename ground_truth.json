@@ -2,6 +2,7 @@
   "repository": "Skeleton Loading State",
   "bugs": [
     {
+      "comment": "Bug #1 - z-index",
       "bug_category": "Layers",
       "bug_type": "z-index",
       "file_modified": "src/App.jsx",
@@ -12,11 +13,12 @@
       "bounding_box": {
         "x": 0,
         "y": 0,
-        "width": 0,
-        "height": 0
+        "width": 1280,
+        "height": 73
       }
     },
     {
+      "comment": "Bug #2 - position",
       "bug_category": "Layout",
       "bug_type": "position",
       "file_modified": "src/App.jsx",
@@ -26,12 +28,13 @@
       "css_selector": "section",
       "bounding_box": {
         "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "y": 73,
+        "width": 1280,
+        "height": 685
       }
     },
     {
+      "comment": "Bug #3 - flex-direction",
       "bug_category": "Layout",
       "bug_type": "flex-direction",
       "file_modified": "src/App.jsx",
@@ -40,13 +43,14 @@
       "buggy_code": "<button className=\"border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition flex-col-reverse\">",
       "css_selector": ".button-secondary",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 227,
+        "y": 504,
+        "width": 149,
+        "height": 50
       }
     },
     {
+      "comment": "Bug #4 - grid-cols",
       "bug_category": "Layout",
       "bug_type": "grid-cols",
       "file_modified": "src/App.jsx",
@@ -55,28 +59,30 @@
       "buggy_code": "<div className=\"grid grid-cols-1 gap-8\">",
       "css_selector": ".features-grid",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 24,
+        "y": 241,
+        "width": 1232,
+        "height": 645
       }
     },
     {
+      "comment": "Bug #5 - gap",
       "bug_category": "Typo",
       "bug_type": "gap",
       "file_modified": "src/App.jsx",
       "line_number": 177,
-      "clean_code": "className=\"group bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105\"",
-      "buggy_code": "className=\"group bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x\"",
+      "clean_code": "className=\"group product-card bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105\"",
+      "buggy_code": "className=\"group product-card bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x\"",
       "css_selector": ".product-card",
       "bounding_box": {
-        "x": 0,
-        "y": 0,
-        "width": 0,
-        "height": 0
+        "x": 861,
+        "y": 834,
+        "width": 395,
+        "height": 394
       }
     },
     {
+      "comment": "Bug #6 - font-size",
       "bug_category": "Typo",
       "bug_type": "font-size",
       "file_modified": "src/App.jsx",
@@ -92,6 +98,7 @@
       }
     },
     {
+      "comment": "Bug #7 - margin",
       "bug_category": "Spacing",
       "bug_type": "margin",
       "file_modified": "src/App.jsx",
@@ -107,6 +114,7 @@
       }
     },
     {
+      "comment": "Bug #8 - padding",
       "bug_category": "Spacing",
       "bug_type": "padding",
       "file_modified": "src/App.jsx",
@@ -122,6 +130,7 @@
       }
     },
     {
+      "comment": "Bug #9 - background-color",
       "bug_category": "Color",
       "bug_type": "background-color",
       "file_modified": "src/App.jsx",
@@ -137,6 +146,7 @@
       }
     },
     {
+      "comment": "Bug #10 - text-color",
       "bug_category": "Color",
       "bug_type": "text-color",
       "file_modified": "src/App.jsx",
