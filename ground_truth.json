@@ -1,5 +1,9 @@
 {
   "repository": "Skeleton Loading State",
+  "playwright_config": {
+    "viewport_height": 3800,
+    "note": "Must scroll down 300px before capturing Bug #1 to reveal z-index failure."
+  },
   "bugs": [
     {
       "comment": "Bug #1 - z-index",
@@ -9,12 +13,12 @@
       "line_number": 91,
       "clean_code": "<nav className=\"sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50\">",
       "buggy_code": "<nav className=\"sticky top-0 z-10 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50\">",
-      "css_selector": "nav",
+      "css_selector": "nav.sticky.backdrop-blur-md",
       "bounding_box": {
         "x": 0,
         "y": 0,
         "width": 1280,
-        "height": 73
+        "height": 300
       }
     },
     {
@@ -25,12 +29,12 @@
       "line_number": 110,
       "clean_code": "<section className=\"max-w-7xl mx-auto px-6 py-24\">",
       "buggy_code": "<section className=\"absolute max-w-7xl mx-auto px-6 py-24\">",
-      "css_selector": "section",
+      "css_selector": "section:has(> div.grid)",
       "bounding_box": {
         "x": 0,
-        "y": 73,
+        "y": 70,
         "width": 1280,
-        "height": 685
+        "height": 730
       }
     },
     {
@@ -40,11 +44,11 @@
       "file_modified": "src/App.jsx",
       "line_number": 127,
       "clean_code": "<button className=\"border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition\">",
-      "buggy_code": "<button className=\"border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition flex-col-reverse\">",
-      "css_selector": ".button-secondary",
+      "buggy_code": "<button className=\"border border-slate-600 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition flex flex-col-reverse\">",
+      "css_selector": "button:has-text(\"Learn More\")",
       "bounding_box": {
         "x": 227,
-        "y": 504,
+        "y": 520,
         "width": 149,
         "height": 50
       }
@@ -57,12 +61,12 @@
       "line_number": 156,
       "clean_code": "<div className=\"grid md:grid-cols-3 gap-8\">",
       "buggy_code": "<div className=\"grid grid-cols-1 gap-8\">",
-      "css_selector": ".features-grid",
+      "css_selector": "#features > div.grid.gap-8",
       "bounding_box": {
         "x": 24,
-        "y": 241,
+        "y": 800,
         "width": 1232,
-        "height": 645
+        "height": 1500
       }
     },
     {
@@ -73,10 +77,10 @@
       "line_number": 177,
       "clean_code": "className=\"group product-card bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105\"",
       "buggy_code": "className=\"group product-card bg-slate-800/50 border border-slate-700/50 rounded-xl overflow-hidden hover:border-blue-500/50 transition cursor-pointer transform hover:scale-105 gap-6x\"",
-      "css_selector": ".product-card",
+      "css_selector": "div.product-card:has(h3:has-text(\"Security Suite Pro\"))",
       "bounding_box": {
         "x": 861,
-        "y": 834,
+        "y": 1700,
         "width": 395,
         "height": 394
       }
@@ -89,10 +93,10 @@
       "line_number": 191,
       "clean_code": "<h3 className=\"text-xl font-bold mb-2\">{project.title}</h3>",
       "buggy_code": "<h3 className=\"tex-xl font-bold mb-2\">{project.title}</h3>",
-      "css_selector": ".product-title",
+      "css_selector": "div.product-card:has(h3:has-text(\"Security Suite Pro\")) h3",
       "bounding_box": {
-        "x": 49,
-        "y": 1434,
+        "x": 835,
+        "y": 1750,
         "width": 345,
         "height": 24
       }
@@ -108,9 +112,9 @@
       "css_selector": "#team",
       "bounding_box": {
         "x": 0,
-        "y": 2021,
+        "y": 2200,
         "width": 1280,
-        "height": 546
+        "height": 600
       }
     },
     {
@@ -121,12 +125,12 @@
       "line_number": 217,
       "clean_code": "<div key={idx} className=\"team-member bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition\">",
       "buggy_code": "<div key={idx} className=\"team-member bg-slate-800/50 border border-slate-700/50 p-8 rounded-xl text-center hover:border-purple-500/50 transition pt-32\">",
-      "css_selector": ".team-member",
+      "css_selector": "div.team-member:has(h3:has-text(\"Sarah Chen\"))",
       "bounding_box": {
         "x": 24,
-        "y": 378,
+        "y": 2280,
         "width": 284,
-        "height": 298
+        "height": 450
       }
     },
     {
@@ -140,7 +144,7 @@
       "css_selector": ".cta-container",
       "bounding_box": {
         "x": 216,
-        "y": 215,
+        "y": 2850,
         "width": 848,
         "height": 259
       }
@@ -153,10 +157,10 @@
       "line_number": 248,
       "clean_code": "<p className=\"footer-description text-slate-400 text-sm\">Building the future of development</p>",
       "buggy_code": "<p className=\"footer-description text-slate-700 text-sm\">Building the future of development</p>",
-      "css_selector": ".footer-description",
+      "css_selector": "p:has-text(\"Building the future of development\")",
       "bounding_box": {
         "x": 24,
-        "y": 692,
+        "y": 2950,
         "width": 284,
         "height": 20
       }
